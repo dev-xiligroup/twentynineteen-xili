@@ -19,7 +19,7 @@ Online demo website is here : http://2019.extend.xiligroup.org
 1. After decompressing "master" .zip from Github, only upload the folder twentynineteen-xili (near the readme.md) to themes folder , the child-theme files expect to be finally in `wp-content/themes/twentynineteen-xili/`!
 1. Before updating, don’t forget to backup your own `.mo` language files
 
-## First release for tests - 2019-04-18
+## First release for tests (minimalist features) - 2019-04-18
 1. with 2019 version 1.3 shipped [here](https://wordpress.org/themes/twentynineteen/)
 1. starts implementation of child files to activate multilingual features
 1. latest version (in test) of xili-language is here https://github.com/dev-xiligroup/xili-language-plugin

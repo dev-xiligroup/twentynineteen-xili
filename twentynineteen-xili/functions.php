@@ -1,14 +1,15 @@
 <?php
+// dev.xiligroup.com - msc - 2019-05-10 - first update for 1.4
 // dev.xiligroup.com - msc - 2019-04-16 - first update for 1.3
 // dev.xiligroup.com - msc - 2018-11-07 - first implementation
 
-define( 'TWENTYNINETEEN_XILI_VER', '1.3' ); // as parent style.css
+define( 'TWENTYNINETEEN_XILI_VER', '1.4' ); // as parent style.css
 
 function twentynineteen_xilidev_setup() {
 
 	$theme_domain = 'twentynineteen';
 
-	$minimum_xl_version = '2.22.0'; // >
+	$minimum_xl_version = '2.23.0'; // >
 
 	$xl_required_version = false;
 
@@ -47,7 +48,7 @@ function twentynineteen_xilidev_setup() {
 
 		if ( is_admin() ) {
 
-		// Admin args dedicaced to this theme
+			// Admin args dedicaced to this theme
 
 			$xili_admin_args = array_merge(
 				$xili_args,
@@ -59,16 +60,16 @@ function twentynineteen_xilidev_setup() {
 				)
 			);
 
-			if ( class_exists( 'xili_language_theme_options_admin' ) ) {
-				$xili_language_theme_options = new xili_language_theme_options_admin( $xili_admin_args );
+			if ( class_exists( 'Xili_Language_Theme_Options_Admin' ) ) {
+				$xili_language_theme_options = new Xili_Language_Theme_Options_Admin( $xili_admin_args );
 				$class_ok = true;
 			} else {
 				$class_ok = false;
 			}
 		} else { // visitors side - frontend
 
-			if ( class_exists( 'xili_language_theme_options' ) ) {
-				$xili_language_theme_options = new xili_language_theme_options( $xili_args );
+			if ( class_exists( 'Xili_Language_Theme_Options' ) ) {
+				$xili_language_theme_options = new Xili_Language_Theme_Options( $xili_args );
 				$class_ok = true;
 			} else {
 				$class_ok = false;
@@ -143,7 +144,13 @@ function twentynineteen_xilidev_setup() {
 	// errors and installation informations
 	// after activation and in themes list
 	if ( isset( $_GET['activated'] ) || ( ! isset( $_GET['activated'] ) && ( ! $xl_required_version || ! $class_ok ) ) ) {
-		//add_action( 'admin_notices', xili_echo_msg( $msg ) );
+		// replace createfunction - obsolete in php 7.2
+		add_action(
+			'admin_notices',
+			function() use ( &$msg ) {
+				echo $msg;
+			}
+		);
 	}
 
 	// end errors...
@@ -159,10 +166,6 @@ function twentynineteen_xilidev_setup() {
 
 function twentynineteen_xili_custom_colors_css( $theme_css, $primary_color, $saturation ) {
 	return $theme_css;
-}
-
-function xili_echo_msg( $msg = '' ) {
-	echo addcslashes( $msg, '"' );
 }
 
 add_action( 'after_setup_theme', 'twentynineteen_xilidev_setup', 11 ); // called after parent
@@ -246,8 +249,8 @@ function twentynineteen_xili_header_image() {
 
 			$header_image_width = get_custom_header()->width; // default values
 			$header_image_height = get_custom_header()->height;
-		$image_srcset_id = ( isset( get_custom_header()->attachment_id ) ) ? get_custom_header()->attachment_id  : 0;
-		$srcset = ""; // no in default
+		$image_srcset_id = ( isset( get_custom_header()->attachment_id ) ) ? get_custom_header()->attachment_id : 0;
+		$srcset = ''; // no in default
 		if ( class_exists( 'xili_language' ) ) {
 			$xili_theme_options = get_theme_xili_options();
 			if ( isset( $xili_theme_options['xl_header'] ) && $xili_theme_options['xl_header'] ) {
@@ -269,7 +272,7 @@ function twentynineteen_xili_header_image() {
 				}
 				foreach ( $headers as $header_key => $header ) {
 
-					if ( isset ( $xili_theme_options['xl_header_list'][$curlangslug] ) && $header_key == $xili_theme_options['xl_header_list'][$curlangslug] ) {
+					if ( isset( $xili_theme_options['xl_header_list'][ $curlangslug ] ) && $header_key == $xili_theme_options['xl_header_list'][ $curlangslug ] ) {
 						$header_image_url = $header['url'];
 
 						$header_image_width = ( isset( $header['width'] ) ) ? $header['width'] : get_custom_header()->width;
@@ -301,17 +304,15 @@ function twentynineteen_xilidev_setup_custom_header() {
 	register_default_headers(
 		array(
 			'xili2019' => array(
-
 				'url' => '%2$s/assets/images/headers/xili2019-h1.jpg',
 				'thumbnail_url' => '%2$s/assets/images/headers/xili2019-h1-thumb.jpg',
-			/* translators: added in child functions by xili */
+				/* translators: added in child functions by xili */
 				'description' => _x( '2019 by xili', 'header image description', 'twentynineteen' ),
 			),
 			'xili2019-2' => array(
-
 				'url' => '%2$s/assets/images/headers/xili2019-h2.jpg',
 				'thumbnail_url' => '%2$s/assets/images/headers/xili2019-h2-thumb.jpg',
-			/* translators: added in child functions by xili */
+				/* translators: added in child functions by xili */
 				'description' => _x( '2019.2 by xili', 'header image description', 'twentynineteen' ),
 			),
 		)
@@ -345,16 +346,18 @@ function twentynineteen_xili_credits() {
 }
 add_action( 'twentynineteen_xili_credits', 'twentynineteen_xili_credits' );
 
+
+// testing
 function twentynineteen_xili_default_hue( $value ) {
 	return $value; // 184;
 }
 
 function twentynineteen_xili_default_saturation( $value ) {
-	return  $value; // 100;
+	return $value; // 100;
 }
 
 function twentynineteen_xili_default_lightness( $value ) {
-	return  $value; // 200;
+	return $value; // 200;
 }
 
 

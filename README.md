@@ -1,4 +1,4 @@
-# twentyseventeen-xili
+# twentynineteen-xili
 
 Child theme of twenty nineteen theme with multilingual features.
 
@@ -25,7 +25,7 @@ Online demo website is here : http://2019.extend.xiligroup.org
 Tested with WP 5.2 and XILI-LANGUAGE 2.23 (fully rewritten in WP formatted sources)
 
 
-=======
+
 ## First release for tests (minimalist features) - 2019-04-30
 
 1. with 2019 version 1.3 shipped [here](https://wordpress.org/themes/twentynineteen/)
@@ -34,5 +34,5 @@ Tested with WP 5.2 and XILI-LANGUAGE 2.23 (fully rewritten in WP formatted sourc
 
 
 2019-05-11
-=======
+
 

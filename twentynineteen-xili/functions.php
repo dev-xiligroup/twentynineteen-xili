@@ -223,7 +223,9 @@ if ( class_exists( 'xili_language' ) ) { // if temporary disabled
 }
 
 function twentynineteen_xili_add_widgets() {
-	register_widget( 'xili_Widget_Categories' ); // in xili-language-widgets.php since 2.16.3
+	if ( class_exists( 'Xili_Widget_Categories' ) ) {
+		register_widget( 'Xili_Widget_Categories' ); // in xili-language-widgets.php since 2.16.3
+	}
 }
 
 function twentynineteen_xili_header_image() {
@@ -341,7 +343,19 @@ function twentynineteen_xili_credits() {
 		/* translators: */
 		esc_html__( 'Multilingual child theme of Twenty Nineteen by %1$s and %2$s', 'twentynineteen' ),
 		'<a href="http://dev.xiligroup.com">dev.xiligroup</a>',
-		'<span class="site-copyright">' . get_theme_mod( 'copyright', esc_html__( 'My company', 'twentynineteen' ) ) . '</span>'
+		'<span class="site-copyright">' . wp_kses(
+			get_theme_mod(
+				'copyright',
+				esc_html__(
+					'My company',
+					'twentynineteen'
+				)
+			),
+			array(
+				'br' => array(),
+				'em' => array(),
+			)
+		) . '</span>'
 	);
 }
 add_action( 'twentynineteen_xili_credits', 'twentynineteen_xili_credits' );

@@ -202,11 +202,6 @@ function my_langs_in_search_form_2019( $the_form ) {
 	}
 	$form .= '</form>';
 
-	// if multiple language is set
-
-	//if ( $xili_language->multiple_lang )
-		//$form .=  do_shortcode( "[xili-multiple-lang-selector button-class='search-submit']");
-
 	return $form;
 }
 

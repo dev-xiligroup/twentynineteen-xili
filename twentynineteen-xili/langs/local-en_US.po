@@ -3,26 +3,25 @@ msgstr ""
 "Project-Id-Version: theme = twentynineteen-xili\n"
 "Report-Msgid-Bugs-To: contact@xiligroup.com\n"
 "POT-Creation-Date: 2019-05-23T09:21:05+00:00\n"
-"PO-Revision-Date: 2019-05-23T09:21:05+00:00\n"
-"Last-Translator: adminxili50 <team@xiligroup.org>\n"
+"PO-Revision-Date: 2019-06-19 10:32+0200\n"
+"Last-Translator: dev.xiligroup <contact@xiligroup.com>\n"
 "Language-Team: xili-dictionary WP plugin and  <team@xiligroup.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
-"X-Poedit-Language: en_US\n"
-"X-Poedit-Country: en_US\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Language: en_US\n"
+"X-Generator: Poedit 2.2.1\n"
 
-#. [local] 
+#. [local]
 #: comment-template.php:31
 #, php-format
 msgid "Anonymous"
-msgstr ""
+msgstr "Anonymous en_us"
 
 #. [local] translators: %s: number of comments
-
-#: comment-template.php:903  comment-template.php:917
+#: comment-template.php:903 comment-template.php:917
 #, php-format
 msgid "%s Comment"
 msgid_plural "%s Comments"
@@ -30,61 +29,56 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. [local] translators: If comment number in your language requires declension,
-#. 			 * translate this to 'on'. Do not translate into your own language.
-
+#. * translate this to 'on'. Do not translate into your own language.
 #: comment-template.php:909
 #, php-format
 msgctxt "Comment number declension: on or off"
 msgid "off"
 msgstr ""
 
-#. [local] 
+#. [local]
 #: comment-template.php:930
 #, php-format
 msgid "No Comments"
 msgstr ""
 
-#. [local] 
+#. [local]
 #: comment-template.php:932
 #, php-format
 msgid "1 Comment"
 msgstr ""
 
-#. [local] 
+#. [local]
 #: comment-template.php:1097
 #, php-format
 msgid "Trackback"
 msgstr ""
 
-#. [local] 
+#. [local]
 #: comment-template.php:1100
 #, php-format
 msgid "Pingback"
 msgstr ""
 
 #. [local] translators: %s: get_trackback_url()
-
 #: comment-template.php:1159
 #, php-format
 msgid "Use %s instead if you do not want the value echoed."
 msgstr ""
 
 #. [local] translators: %s: post title
-
 #: comment-template.php:1536
 #, php-format
 msgid "No Comments<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. [local] translators: %s: post title
-
 #: comment-template.php:1541
 #, php-format
 msgid "1 Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. [local] translators: 1: number of comments, 2: post title
-
 #: comment-template.php:1546
 #, php-format
 msgid "%1$s Comment<span class=\"screen-reader-text\"> on %2$s</span>"
@@ -93,56 +87,54 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. [local] translators: %s: post title
-
 #: comment-template.php:1552
 #, php-format
 msgid "Comments Off<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
-#. [local] 
+#. [local]
 #: comment-template.php:1561
 #, php-format
 msgid "Enter your password to view comments."
 msgstr ""
 
-#. [local] 
+#. [local]
 #: comment-template.php:1633
 #, php-format
 msgid "Reply"
 msgstr ""
 
 #. [local] translators: Comment reply button text. %s: Comment author name
-
 #: comment-template.php:1635
 #, php-format
 msgid "Reply to %s"
 msgstr ""
 
-#. [local] 
+#. [local]
 #: comment-template.php:1636
 #, php-format
 msgid "Log in to Reply"
 msgstr ""
 
-#. [local] 
+#. [local]
 #: comment-template.php:1769
 #, php-format
 msgid "Leave a Comment"
 msgstr ""
 
-#. [local] 
+#. [local]
 #: comment-template.php:1770
 #, php-format
 msgid "Log in to leave a Comment"
 msgstr ""
 
-#. [local] 
+#. [local]
 #: comment-template.php:1843
 #, php-format
 msgid "Click here to cancel reply."
 msgstr ""
 
-#. [local] 
+#. [local]
 #: comment-template.php:2290
 #, php-format
 msgid "Save my name, email, and website in this browser for the next time I comment."
